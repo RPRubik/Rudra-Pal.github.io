@@ -1,0 +1,498 @@
+/* =========================================
+   1. RESET & GENERAL STYLING
+   ========================================= */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f9fbf2; /* Light off-white background */
+  font-family: "Segoe UI", sans-serif;
+  color: #444;
+  line-height: 1.6;
+}
+
+section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+a {
+  color: #203a43;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #005f73;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: #203a43;
+}
+
+h2.category-title {
+  margin-top: 4rem;
+  font-size: 1.8rem;
+  display: flex; 
+  align-items: center; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Decorative line after Category Titles */
+h2.category-title::after { 
+  content: ""; 
+  flex: 1; 
+  height: 2px; 
+  background: #203a43; 
+  margin-left: 1rem; 
+  opacity: 0.3;
+}
+
+/* =========================================
+   2. GLOBAL HEADER & NAVIGATION
+   ========================================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: #e8fcc5; /* Light Green Brand Color */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: rgba(28, 28, 28, 0.95);
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  color: rgba(28, 28, 28, 0.95);
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  padding: 0.5rem;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: white;
+  min-width: 200px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.dropdown-content a:hover {
+  background: #f2f2f2;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* =========================================
+   3. PROJECT ACCORDION (DETAILS/SUMMARY)
+   ========================================= */
+.project-dropdown {
+  margin-bottom: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  overflow: hidden; /* Keeps content inside rounded corners */
+}
+
+/* The Clickable Bar */
+.project-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  background: white;
+  padding: 1.5rem 2rem;
+  transition: background 0.2s ease;
+  position: relative;
+}
+
+.project-dropdown summary::-webkit-details-marker {
+  display: none; /* Hides default triangle */
+}
+
+.project-dropdown summary:hover {
+  background: #fafafa;
+}
+
+/* Active State (Open) */
+.project-dropdown[open] summary {
+  border-bottom: 1px solid #eee;
+  background: #f8f9fa;
+}
+
+.summary-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-content h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.view-more {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #888;
+  font-weight: 600;
+}
+
+/* =========================================
+   4. CASE STUDY CARD LAYOUT
+   ========================================= */
+.case-study-card {
+  padding: 2rem 2.5rem;
+  background: white;
+}
+
+/* Two-Column Top Section */
+.top-row {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.quadrant { 
+  flex: 1; 
+}
+
+/* Full Width Sections */
+.full-width-section {
+  width: 100%;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed #eee;
+}
+
+/* Headings inside cards */
+.case-study-card h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 12px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.8px;
+  font-weight: 700;
+  /* Default Green Border */
+  border-left: 4px solid #e8fcc5; 
+}
+
+.case-study-card p, .case-study-card li {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  color: #555;
+}
+
+/* =========================================
+   5. TIMELINE / ITERATION LISTS
+   ========================================= */
+.timeline {
+  position: relative;
+  padding-left: 25px;
+  border-left: 2px solid #e8fcc5; /* Vertical line color */
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.iteration {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.iteration:last-child {
+  margin-bottom: 0;
+}
+
+/* Timeline Dot */
+.iteration::before {
+  content: "";
+  position: absolute;
+  left: -32px; /* Adjust to sit on the line */
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: #203a43;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px #e8fcc5;
+}
+
+.iteration b {
+  display: block;
+  color: #203a43;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+/* =========================================
+   6. RESULTS HIGHLIGHT BOX
+   ========================================= */
+.results-highlight {
+  background: #ffffff; /* Subtle blue-grey tint */
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  border: 1px solid #e1e8ed;
+}
+
+/* OVERRIDE: Black border for "Verification & Validation" header */
+.results-highlight h4 {
+  border-left: 5px solid #203a43; /* Site Dark Color */
+  color: #203a43;
+}
+
+/* =========================================
+   7. OPTIMIZED PHOTO GALLERY
+   ========================================= */
+.project-gallery h4 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-grid {
+  display: grid;
+  /* Responsive columns: min 260px wide, max fits container */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+figure {
+  margin: 0;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden; /* Crops content inside rounded corners */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
+  cursor: pointer;
+  height: 100%; /* Forces equal height in row */
+}
+
+figure:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  border-color: #203a43;
+}
+
+/* Fixed Height Image Area */
+figure img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background: white; /* Changed to white to match your images */
+  border-bottom: 1px solid #f7f7f7;
+}
+
+figcaption {
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+  background: white;
+  line-height: 1.4;
+  flex-grow: 1; /* Pushes text to fill space if needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+figcaption strong {
+  display: block;
+  color: #203a43;
+  margin-bottom: 0.2rem;
+}
+
+/* =========================================
+   FIX 1: INSTANT LIGHTBOX (ZERO DELAY)
+   ========================================= */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+  
+  /* Make the transition much faster (0.15s is snappy) */
+  opacity: 0;
+  visibility: hidden; 
+  pointer-events: none;
+  transition: opacity 0.15s ease-out; 
+  will-change: opacity; /* Tells browser to optimize this */
+}
+
+#lightbox.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  
+  /* Faster zoom effect */
+  transform: scale(0.96);
+  transition: transform 0.15s ease-out;
+}
+
+#lightbox.active img {
+  transform: scale(1);
+}
+
+/* =========================================
+   FIX 2: FORCE BLACK BORDER ON VALIDATION
+   ========================================= */
+/* Use !important to guarantee it overrides the default green */
+.results-highlight h4 {
+  border-left: 5px solid #203a43 !important; 
+  color: #203a43;
+}
+
+/* =========================================
+   FIX 3: ADJUST CAPTION SIZING
+   ========================================= */
+/* Ensure text has breathing room */
+figcaption {
+  padding: 1rem; 
+  text-align: center;
+  font-size: 0.9rem;
+  color: #444;
+  background: white;
+  line-height: 1.4;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =========================================
+   9. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+  .top-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .case-study-card {
+    padding: 1.5rem;
+  }
+  
+  .summary-content h3 {
+    font-size: 1.1rem;
+  }
+  
+  .category-title {
+    font-size: 1.4rem;
+    margin-top: 3rem;
+  }
+}
+
+/* =========================================
+   10. EDUCATION & VOLUNTEERING STYLES
+   ========================================= */
+.edu-entry, .vol-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
+/* This fixes the giant logo issue */
+.edu-entry img, .vol-card img {
+  width: 100px;      /* Restricts width */
+  height: 100px;     /* Restricts height */
+  object-fit: contain; /* Keeps aspect ratio */
+  flex-shrink: 0;    /* Prevents squishing */
+}
+
+/* Skills Tags (Technical Toolbox) */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  background: #203a43;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Mobile Responsiveness for these cards */
+@media (max-width: 768px) {
+  .edu-entry, .vol-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .edu-entry img, .vol-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rudra Pal | Home</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* Page-Specific Styling for Home */
+    .about { 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 2rem; 
+      padding: 4rem 2rem; 
+      max-width: 1000px; 
+      margin: 2rem auto; 
+      background: white; 
+      border-radius: 10px; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08); 
+    }
+    
+    .about img { 
+      width: 250px; 
+      height: 250px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      /* Using the light green border you requested */
+      border: 4px solid #e8fcc5; 
+    }
+    
+    .about-text { 
+      max-width: 600px; 
+    }
+    
+    .about-text h2 { 
+      margin-top: 0; 
+      color: #203a43; 
+    }
+    
+    .about-text p { 
+      color: #444; 
+      line-height: 1.6; 
+      font-size: 1.05rem;
+    }
+    
+    /* Mobile layout */
+    @media (max-width: 768px) { 
+      .about { 
+        flex-direction: column; 
+        text-align: center; 
+      } 
+      .about img { 
+        width: 200px; 
+        height: 200px; 
+      } 
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><a href="index.html">Rudra Pal</a></h1>
+    <nav class="dropdown">
+      <button class="dropbtn">Menu ▾</button>
+      <div class="dropdown-content">
+        <a href="engr-projects.html">Projects</a>
+        <a href="education.html">Education</a>
+        <a href="volunteering.html">Volunteering</a>
+        <a href="connect.html">Connect</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="about">
+    <img src="images/Rudra.jpg" alt="Rudra Pal Profile Picture">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        Hi! I’m Rudra Pal, a mechanical and aerospace engineering student with a passion for robotics, innovation, and building systems that bring ideas to life.
+        
+    </div>
+  </section>
+
+</body>
+</html>

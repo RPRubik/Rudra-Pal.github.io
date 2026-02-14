@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rudra Pal | Engineering Projects</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <h1><a href="index.html">Rudra Pal</a></h1>
+  <div class="dropdown">
+    <button class="dropbtn">Menu ▾</button>
+    <div class="dropdown-content">
+      <a href="engr-projects.html">Projects</a>
+      <a href="education.html">Education</a>
+      <a href="volunteering.html">Volunteering</a>
+      <a href="connect.html">Connect</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2 class="category-title">AIAA Design Build Fly (RPI)</h2>
+
+  <details class="project-dropdown">
+    <summary>
+      <div class="summary-content">
+        <h3>Flight Data Recorder / Black Box</h3>
+        <span class="view-more">View Details ▾</span>
+      </div>
+    </summary>
+    <div class="case-study-card">
+      <div class="top-row">
+        <div class="quadrant">
+          <h4>Objective & Motivation</h4>
+          <p>During the development of our Competition RC aircraft, the team relied on a proprietary aerodynamic model to predict flight characteristics. Theoretical models often diverge from real-world physics; therefore, we required an onboard system to capture high-fidelity telemetry.</p>
+          <p>The goal was to validate theoretical performance against physical data to refine the airframe for the AIAA national competition.</p>
+        </div>
+        <div class="quadrant">
+          <h4>Requirements & Constraints</h4>
+          <p>The system was initiated with undefined sensor hardware, requiring a flexible design to accommodate various data types:</p>
+          <ul>
+            <li><strong>Spatial Constraints:</strong> Initial size estimate of 120 x 60 mm based on available fuselage volume.</li>
+            <li><strong>Data Complexity:</strong> Requirement to aggregate GPS coordinates, Pitot-static airspeed, elevation, and tri-axial acceleration.</li>
+            <li><strong>Survivability:</strong> Mechanical housing must protect hardware from vibration during high-G maneuvers and survive a catastrophic crash.</li>
+            <li><strong>Communication:</strong> Maintain a live link for real-time wireless transmission to a ground-station PC.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="full-width-section">
+        <h4>Iterative Design Evolution</h4>
+        <div class="timeline">
+          <div class="iteration">
+            <b>Iteration 1: Proof of Concept</b>
+            <span>Developed a baseline configuration using a standard flight controller and dual-sensor AoA system. This version was deployed on a secondary test aircraft to validate sensor synchronization and code stability without risking the primary competition airframe.</span>
+          </div>
+          <div class="iteration">
+            <b>Iteration 2: Multi-Stream Expansion & Survival</b>
+            <span>Expanded the system architecture by integrating an Arduino to handle new data streams: throttle input, voltage, and current. This version featured a second SD card storing data from the new sensors and was tested on the initial competition prototype. Following a stall-induced crash, the "Black Box" survived, providing the first set of post-mortem data that proved the value of the ruggedized housing.</span>
+          </div>
+          <div class="iteration">
+            <b>Iteration 3: Architectural Pivot (The ESP32 Transition)</b>
+            <span>To overcome the memory and processing limitations of the Arduino, we transitioned the system to an ESP32 microcontroller. This allowed for higher-speed logging and the integration of a GPS module and a pitot-static tube for real-time airspeed measurement. This pivot was essential for handling the simultaneous high-speed logging and wireless telemetry offloading required by the final mission profile.</span>
+          </div>
+          <div class="iteration">
+            <b>Iteration 4: Mechanical Miniaturization & Accessibility</b>
+            <span>Driven by a new, more compact airframe chassis, I redesigned the mechanical housing to drastically reduce its footprint to 40 x 70 mm—a 60% reduction in area. This Iteration introduced a "dual-face" opening lid to improve internal access and implemented quick-connect plugs for external sensors, significantly reducing assembly time and field-service complexity. I utilized 3D vertical stacking in CAD to maximize internal real estate while maintaining structural integrity.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-highlight">
+        <h4>Result Highlights</h4>
+        <p>On every subsequent test flight, the system successfully captured a comprehensive dataset exhibiting a <strong>0.7 p-value correlation</strong> at its best between physical telemetry and theoretical predictions.</p>
+        <p>Analysis of this data pinpointed specific aerodynamic discrepancies, leading to critical adjustments in our proprietary flight model. These refinements directly optimized stability and performance, ultimately securing the team's design proposal a rank of <strong>25 in the global ranking</strong>.</p>
+      </div>
+
+      <div class="project-gallery">
+        <h4>Project Gallery: Iteration & Documentation</h4>
+        <div class="gallery-grid">
+          <figure>
+            <img src="images/Black Box/concept_sketch.png" alt="Concept Sketch">
+            <figcaption>Initial Concept Sketch</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Black Box/additonal parts.webp" alt="CAD Stack">
+            <figcaption><strong>Iteration 3:</strong> CAD Vertical Stacking</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Black Box/assembled image 1.png" alt="Wiring V1">
+            <figcaption><strong>Iteration 2:</strong> Internal wiring</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Black Box/open black box.png" alt="Wiring V2">
+            <figcaption><strong>Iteration 4:</strong> Internal wiring</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Black Box/crash_test.png" alt="Crash Test">
+            <figcaption>Crash Survival Verification</figcaption>
+          </figure>
+          <figure>
+            <img src="images//Black Box/final_unit.png" alt="Final Unit">
+            <figcaption><strong>Iteration 4:</strong> Setup for Flight</figcaption>
+          </figure>
+          <figure>
+            <img src="images/black box.png" alt="Drawing 1">
+            <figcaption>Black Box <strong>Iteration 2</strong> Engineering Drawing</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Screenshot 2026-02-05 154821.png" alt="Drawing 2">
+            <figcaption>Black Box <strong>Iteration 4</strong> Engineering Drawing</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="project-dropdown">
+    <summary>
+      <div class="summary-content">
+        <h3>Dual Angle of Attack (AoA) Sensor</h3>
+        <span class="view-more">View Details ▾</span>
+      </div>
+    </summary>
+    <div class="case-study-card">
+      <div class="top-row">
+        <div class="quadrant">
+          <h4>Objective & Motivation</h4>
+          <p><strong>Current State:</strong> Zero onboard AoA instrumentation, leading to a reliance on theoretical models rather than real-time empirical data.</p>
+          <p><strong>Technical Constraint:</strong> Commercial sensors were either too expensive for the team or lacked the specialized specs needed for our flight conditions.</p>
+          <p><strong>Design Objective:</strong> Establish a new standard for onboard data collection by achieving ≤1% measurement error through a frictionless sensing architecture.</p>
+        </div>
+        <div class="quadrant">
+          <h4>Technical Process</h4>
+          <ul>
+            <li><strong>Research & Design:</strong> I started by analyzing different implementations of Angle of Attack designs of commercial and military aircraft. This research informed the decision to use a vane-style sensor to ensure alignment with the relative wind.</li>
+            <li><strong>Prototyping:</strong> Initial prototypes were 3D printed to test the fitment of Hall Effect sensors and magnets. These early versions focused on proof-of-concept of rotation and accuracy rather than aerodynamic efficiency.</li>
+            <li><strong>Final V1.0 Implementation:</strong> Version 1.0 transitioned to an assembly utilizing stainless steel ball bearings with a 3D printed shaft and wing. This reduced mechanical resistance and friction, allowing the vane to react to even the slightest changes in pitch.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="full-width-section">
+        <h4>Iterative Design Evolution</h4>
+        <div class="timeline">
+          <div class="iteration">
+            <b>Iteration 1: Aerodynamic Optimization (The Wedge Pivot)</b>
+            <span>We pivoted from a curved design to a simplified wedge-shaped wing because our calculations showed it had a lower moment, leading to much more accurate data. This geometry provided predictable aerodynamic behavior and was significantly easier to manufacture via 3D printing. Additionally, the flat surfaces made it easier to calculate and locate the initial CoG for the assembly.</span>
+          </div>
+          <div class="iteration">
+            <b>Iteration 2: Mass Balancing & The Counter-Boom</b>
+            <span>To ensure the sensor was only manipulated by the resultant wind, I added a counter-balancing boom on the opposite side of the pivot. The goal was to move the CoG to the absolute center of rotation. This resulted in a perfectly balanced sensor where gravity or centripetal forces during flight maneuvers wouldn't create "false" readings, ensuring the vane tracks the wind vector with ≤ 1° of error.</span>
+          </div>
+          <div class="iteration">
+            <b>Iteration 3: Isolating Relative Wind (Work in Progress)</b>
+            <span>In previous designs, sensors were mounted on the wingtips, where wingtip vortices could introduce turbulence and degrade accuracy. To resolve this, we transitioned to a single-sensor configuration mounted on the underside of the wing. By positioning the sensor outside of the wing's boundary layer and the propeller's airwash, we ensured the vane is exposed to "clean" air. We have successfully manufactured and flight-tested the first prototype of this configuration, and refinement of this design is currently a work in progress.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-highlight">
+        <h4>Result Highlights</h4>
+        <p>This project successfully produced the <strong>first dual-AoA sensor configuration in team history</strong>. By utilizing high-precision bearings and balanced geometry, the system achieved a tolerance of <strong>± 0.5°</strong>.</p>
+        <p>Data captured from the most recent working iteration has been instrumental in refining our aerodynamic flight model, providing the team with a level of telemetry precision previously unavailable.</p>
+      </div>
+
+      <div class="project-gallery">
+        <h4>Project Gallery: Sensor Evolution & Testing</h4>
+        <div class="gallery-grid">
+          <figure>
+            <img src="images/AoA/Screenshot 2025-09-12 142156.png" alt="V1 CAD">
+            <figcaption><strong>Iteration 1:</strong> CAD with symmetric curved design</figcaption>
+          </figure>
+          <figure>
+            <img src="images/AoA/image.png" alt="Data Graph">
+            <figcaption><strong>Iteration 1:</strong> Graph of Data from AoA</figcaption>
+          </figure>
+          <figure>
+            <img src="images/AoA/WEDGE SHAPE.png" alt="Wedge Shape">
+            <figcaption><strong>Iteration 1:</strong> AoA with Wedge Shape Wing</figcaption>
+          </figure>
+          <figure>
+            <img src="images/AoA/AOA WITH Boom.png" alt="Counter Boom">
+            <figcaption><strong>Iteration 2:</strong> AoA with Counter Balancing Boom</figcaption>
+          </figure>
+          <figure>
+            <img src="images/AoA/AoA wing Tip.png" alt="Physical Parts">
+            <figcaption><strong>Iteration 2:</strong> Dual AoA Flight Test</figcaption>
+          </figure>
+          <figure>
+            <img src="images/AoA/boom aoa v1.png" alt="Under Wing">
+            <figcaption><strong>Iteration 3.1:</strong> Under Wing AoA Prototype #1</figcaption>
+          </figure>
+          <figure>
+            <img src="images/AoA/boom aoa v2.png"Mounted">
+            <figcaption><strong>Iteration 3.2:</strong> Under Wing AoA Prototype #2</figcaption>
+          </figure>
+          <figure>
+            <img src="images/AoA/Boom_Dual_AOA.png" alt="Ready to Mount">
+            <figcaption><strong>Iteration 3.2:</strong> Printed and ready to mount</figcaption>
+          </figure>
+          <figure>
+            <img src="images/AoA/AOA on boom.png" alt="Ready to Mount">
+            <figcaption><strong>Iteration 3.2:</strong> Mounted and tested on Plane</figcaption>
+          </figure>
+          <figure>
+            <img src="images/AoA/" alt="Ready to Mount">
+            <figcaption><strong>Iteration 3.2:</strong> Mounted and tested on Plane</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="project-dropdown">
+    <summary>
+      <div class="summary-content">
+        <h3>Flight Test Thrust Stand (WIP)</h3>
+        <span class="view-more">View Details ▾</span>
+      </div>
+    </summary>
+    <div class="case-study-card">
+      <div class="top-row">
+        <div class="quadrant">
+          <h4>Objective</h4>
+          <p>To accurately measure static thrust, torque, and efficiency for various motor and blade combinations. For the 2026 competition season, we are testing the difference in data between a plastic (current) and carbon fiber (new) propeller. We are also going to use this stand in the future to test various motor and propeller combinations. The goal is to move from theoretical motor selection to empirical data validation.</p>
+        </div>
+        <div class="quadrant">
+          <h4>Technical Design</h4>
+          <p>Designed a custom rig featuring a <strong>linear rail interface</strong> to isolate thrust vectors using a load cell, a <strong>U-shaped mount</strong> with two load cells to measure torque, and a <strong>universal motor mount</strong> to swap propulsion units quickly. We also built a custom tachometer to measure RPM and store this data on an Arduino.</p>
+        </div>
+      </div>
+
+      <div class="full-width-section">
+        <h4>Current Progress (Iteration 1)</h4>
+        <p>I designed the assembly in CAD and utilized 3D printing for fabrication. I first printed parts in PETG to verify dimensional accuracy and fitment. Once validated, I manufactured the final load-bearing components using <strong>Nylon Carbon Fiber</strong> to ensure high rigidity under load.</p>
+      </div>
+
+      <div class="results-highlight">
+        <h4>Next Steps: Testing Phase</h4>
+        <p>The mechanical assembly is currently complete. Over the coming semester, the project will focus on:</p>
+        <ul>
+          <li><strong>Instrumentation:</strong> Wiring and calibrating the load cells and RPM sensors to the DAQ.</li>
+          <li><strong>Data Collection:</strong> Running live-fire tests to generate thrust curves for our candidate motors and propeller systems.</li>
+        </ul>
+      </div>
+
+      <div class="project-gallery">
+        <h4>Project Gallery: Initial CAD and Prototypes</h4>
+        <div class="gallery-grid">
+          <figure>
+            <img src="images/Screenshot 2026-01-31 165118.png" alt="CAD">
+            <figcaption><strong>Iteration 1:</strong> Initial CAD</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Intital test Fit ABS.png" alt="PETG Print">
+            <figcaption><strong>Iteration 1:</strong> Test Print With PETG and Electronics</figcaption>
+          </figure>
+          <figure>
+            <img src="images/Carbon.png" alt="Carbon Fiber Print">
+            <figcaption><strong>Iteration 1:</strong> Print With Nylon Carbon Fiber Composite</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <h2 class="category-title">Professional Experience</h2>
+
+  <details class="project-dropdown">
+    <summary>
+      <div class="summary-content">
+        <h3>Vayu Robotics (Internship) - Autonomy Integration</h3>
+        <span class="view-more">View Details ▾</span>
+      </div>
+    </summary>
+    <div class="case-study-card">
+      <div class="top-row">
+        <div class="quadrant">
+          <h4>Objective: Model Generalizability</h4>
+          <p>The primary engineering objective was to validate that the proprietary <strong>Vayu Sense</strong> camera and AI foundation model could generalize to novel robotic platforms without requiring a complete retraining of the neural networks.</p>
+          <p>The goal was to prove that by simply updating the <strong>camera intrinsics and extrinsics</strong> (calibration data), the perception stack could instantly adapt to different robot kinematics—specifically testing on a Unitree Go2 Quadruped and a Humanoid platform.</p>
+        </div>
+        <div class="quadrant">
+          <h4>The Engineering Challenge</h4>
+          <p>We needed to bridge two distinct software architectures:</p>
+          <ul>
+            <li><strong>Vayu Ecosystem:</strong> A high-fidelity perception and path planning stack providing semantic understanding and depth.</li>
+            <li><strong>Unitree Ecosystem:</strong> A closed-source low-level control API for motor actuation.</li>
+          </ul>
+          <p>My role was to architect the hardware and software "bridge" to allow the Vayu brain to drive the Unitree body.</p>
+        </div>
+      </div>
+
+      <div class="full-width-section">
+        <h4>Integration Methodology</h4>
+        <div class="timeline">
+          <div class="iteration">
+            <b>Phase 1: Low-Level Control & Hardware</b>
+            <span>I began by reverse-engineering the Unitree API to understand how to programmatically command velocity and yaw vectors. Simultaneously, I designed and fabricated a custom mounting solution to affix the Vayu Sense compute unit and camera array to the robot's back, solving for vibration isolation and ensuring the camera extrinsics remained static relative to the robot frame.</span>
+          </div>
+          <div class="iteration">
+            <b>Phase 2: The Software Bridge (Perception to Action)</b>
+            <span>To close the loop, I developed a ROS-based interface linking the two APIs. The Vayu model processed visual data to generate a viable path, which I fed into a <strong>Pure Pursuit</strong> algorithm I implemented. This algorithm calculated the necessary curvature and velocity commands, which were then translated into Unitree-specific packets to drive the robot along the path.</span>
+          </div>
+          <div class="iteration">
+            <b>Phase 3: Calibration vs. Retraining</b>
+            <span>The critical success of this project was the validation of the calibration pipeline. Instead of retraining the model (which is computationally expensive), we successfully demonstrated that by mathematically defining the new sensor position (extrinsics) and lens properties (intrinsics), the model successfully "understood" its new height and perspective, allowing for accurate obstacle avoidance immediately.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-highlight">
+        <h4>Results</h4>
+        <ul>
+          <li><strong>Quadruped Success:</strong> Fully achieved autonomous navigation on the Unitree Go2, proving the "calibration-only" adaptation hypothesis.</li>
+          <li><strong>Humanoid Scalability:</strong> Established the initial calibration and mounting framework for the Humanoid robot, applying the same intrinsic/extrinsic transformation logic used on the quadruped.</li>
+          <li><strong>Cost Efficiency:</strong> Validated that this vision-based approach could match the navigation fidelity of LiDAR-based systems at a <strong>50x lower hardware cost</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="project-gallery">
+        <h4>Project Gallery</h4>
+        <div class="gallery-grid">
+          <figure>
+            <img src="images/vayu_dog.jpg" alt="Vayu Dog Outdoor">
+            <figcaption>Unitree Go2 with Custom Compute & Sensor Stack testing outdoor</figcaption>
+          </figure>
+          <figure>
+            <img src="images/vayu_dog_front.jpg" alt="Vayu Dog Front">
+            <figcaption>Front View: Vayu Sense Camera Array</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <h2 class="category-title">Vex Robotics Competition Seasons</h2>
+
+  <details class="project-dropdown">
+    <summary>
+      <div class="summary-content">
+        <h3>2024 - 2025 Competition Robot (High Stakes Season)</h3>
+        <span class="view-more">View Details ▾</span>
+      </div>
+    </summary>
+    <div class="case-study-card">
+      <div class="top-row">
+        <div class="quadrant">
+          <h4>Game Challenge: High Stakes</h4>
+          <p>The objective is to manipulate 7-inch toroidal rings onto vertical stakes of varying heights. The field features static neutral goals ("Wall Stakes") and heavy mobile goals that must be transported. The match concludes with a vertical climb on a central ladder structure.</p>
+          <p><strong>Engineering Constraints:</strong></p>
+          <ul>
+            <li><strong>Cycle Time:</strong> Required &lt;2 second acquisition-to-score time to outpace defensive opponents.</li>
+            <li><strong>Precision:</strong> Scoring on neutral Wall Stakes required ± 1cm accuracy at extended reach/height.</li>
+            <li><strong>Agility:</strong> The open-field layout necessitated a drivetrain capable of instantaneous vector changes to evade defense while having high speed and torque.</li>
+          </ul>
+        </div>
+        <div class="quadrant">
+          <h4>Iterative Development</h4>
+          <p>I led the CAD and systems integration for four complete major design iterations ("Bot 1" through "Bot 4") over the 8-month season.</p>
+          <p>Each iteration was driven by failure analysis:</p>
+          <ul>
+            <li><strong>Bot 2 to 3 (Intake Failure):</strong> Transitioned from a pure-roller intake to a hybrid system to resolve jamming issues caused by the elastic deformation of the rings.</li>
+            <li><strong>Bot 3 to 4 (Center of Mass):</strong> Redesigned the chassis geometry to minimize CoG shifts during arm extension, improving autonomous path tracking consistency.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="full-width-section">
+        <h4>Mechanical Architecture</h4>
+        <div class="timeline">
+          <div class="iteration">
+            <b>Variable Compliance Intake System (The "Hybrid" Solution)</b>
+            <span>Standard roller intakes failed to handle the variance in game object as it traveled from 0 degrees to around 45 degrees. I designed a novel hybrid architecture:
+              <ul>
+                <li><strong>Stage 1 (Acquisition):</strong> Utilizes high-compliance elastomer wheels to deform the object, maximizing friction and acquisition speed even at oblique angles.</li>
+                <li><strong>Stage 2 (Indexing):</strong> Transitions to rigid hook geometry to mechanically lock the object in place, ensuring deterministic positioning for the scoring mechanism.</li>
+              </ul>
+              This hybrid approach decoupled the "speed" requirement from the "precision" requirement, solving the jamming issues inherent in single-stage designs.
+            </span>
+          </div>
+          <div class="iteration">
+            <b>Multi-DOF End-Effector</b>
+            <span>To score on the vertical goals from any chassis orientation, I engineered a 2-bar linkage arm mounted that turns the goal to our desired angle. The end-effector utilizes a friction-based grabber with a passive over-center locking mechanism, allowing the robot to manipulate heavy mobile goals without continuous pneumatics power consumption and makes it extremely hard to steal from our robot.</span>
+          </div>
+          <div class="iteration">
+            <b>High-Speed Differential Drivetrain & Odometry Integration</b>
+            <span>Designed a 6-motor tank drive geared for high speed (480 RPM). To solve the position-loss issues common in high-speed skid-steer systems, I designed and integrated custom "dead-wheel" odometry modules. These spring-loaded, non-driven wheels maintain constant ground contact to measure true displacement, decoupling wheel slip from the robot's localization data.</span>
+          </div>
+        </div>
+
+        <h4>Control Theory & Automation</h4>
+        <div class="timeline">
+          <div class="iteration">
+            <b>Stack-Based Color Sorting Algorithm</b>
+            <span>To filter opponent game objects during rapid intake sequences, I implemented a custom <strong>Stack Data Structure</strong> to track the state of rings inside the mechanism:
+              <ul>
+                <li><strong>Push Operation:</strong> When the Color Sensor detects an entry event, the object's color signature and encoder timestamp are pushed onto the software stack.</li>
+                <li><strong>Pop & Filter:</strong> As the ring travels up the intake a second Color Sensor, the system pops the top data object. If the popped value flags as an "Opponent Color," the intake executes a precise 100ms reverse pulse to eject that specific ring while retaining valid objects.</li>
+              </ul>
+            </span>
+          </div>
+          <div class="iteration">
+            <b>Computer Vision & Closed-Loop Tracking</b>
+            <span>Developed a "Continuous Motion" algorithm using an onboard vision sensor. The system identifies colored game objects at 50Hz, calculating the object's centroid relative to the robot. A PID loop then dynamically adjusts the drivetrain's heading and intake velocity, allowing the robot to acquire targets without stopping.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-highlight">
+        <h4>Verification & Validation</h4>
+        <p>The final system ("Bot 4") was validated through competition performance:</p>
+        <ul>
+          <li><strong>Reliability:</strong> The Variable Compliance Intake achieved a 99% successful acquisition rate in stress testing.</li>
+          <li><strong>Recognition:</strong> The design process and notebook documentation were awarded the <strong>"Innovate Award"</strong> at the NorCal Signature Event and at the World Championships.</li>
+          <li><strong>Performance:</strong> The autonomous routines consistently scored maximum Win Points, qualifying the team for the State Championship.</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="project-dropdown">
+    <summary>
+      <div class="summary-content">
+        <h3>2023 - 2024 Competition Robot (Over Under Season)</h3>
+        <span class="view-more">View Details ▾</span>
+      </div>
+    </summary>
+    <div class="case-study-card">
+      <div class="top-row">
+        <div class="quadrant">
+          <h4>Game Challenge: Over Under</h4>
+          <p>The objective was to manipulate "Triball" game objects, scoring them into goals and "elevating" the robot on a bar at the end of the match.</p>
+          <p><strong>Engineering Constraints:</strong></p>
+          <ul>
+            <li><strong>Pushing Power:</strong> The game meta evolved into heavy defense and "bowling" (pushing) masses of game objects, requiring immense drivetrain torque.</li>
+            <li><strong>Elevation:</strong> Climbing a vertical pole required lifting the robot's entire weight using limited actuator resources.</li>
+            <li><strong>Cycle Efficiency:</strong> Required a launcher capable of cross-field shots with low arc to prevent bouncing.</li>
+          </ul>
+        </div>
+        <div class="quadrant">
+          <h4>Iterative Development</h4>
+          <p>The robot underwent three major architectural revisions to adapt to the evolving game meta:</p>
+          <ul>
+            <li><strong>V1 (Flywheel Baseline):</strong> Initial designs utilized a flywheel for cross-field shooting. However, quantitative testing revealed a high "bounce-out" rate due to backspin, triggering a complete redesign of the launching subsystem.</li>
+            <li><strong>V2 (The Pivot):</strong> Transitioned to a linear "Slapper" mechanism. This impactor produced a "knuckleball" trajectory with zero backspin, increasing scoring retention by ~40%.</li>
+            <li><strong>V3 (Power Expansion):</strong> Upgraded from a standard 4-motor drive to a custom <strong>77W (8-Motor equivalent)</strong> configuration to win pushing battles against defensive opponents.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="full-width-section">
+        <h4>Mechanical Architecture</h4>
+        <div class="timeline">
+          <div class="iteration">
+            <b>77W High-Torque Drivetrain (Hybrid Motor System)</b>
+            <span>To maximize pushing power while maintaining speed, I designed a custom gearbox combining dissimilar motors:
+              <ul>
+                <li><strong>Architecture:</strong> Fused six 11W motors with two 5.5W motors (Total 77W) driving a 450 RPM geartrain on 3.25" wheels.</li>
+                <li><strong>Packaging:</strong> utilized a custom "stacked" mounting configuration to fit the extra motors within the chassis rails without widening the wheel track, ensuring the robot could still fit through the "alley" under the goal.</li>
+              </ul>
+            </span>
+          </div>
+          <div class="iteration">
+            <b>Linear Impact Launcher ("The Slapper")</b>
+            <span>Engineered a compact catapult driven by a 36:12 high-speed gear ratio. Unlike flywheels which induce backspin, this mechanism strikes the Triball with a flat paddle equipped with "cut flex wheels" to absorb impact shock. This produced a knuckleball-effect trajectory, allowing us to bowl Triballs under the opposing alliance's barrier with high precision.</span>
+          </div>
+          <div class="iteration">
+            <b>Pneumatic Elevation & Active Balancing</b>
+            <span>Designed a "C-Tier or Level 3" elevation system using only pneumatic pistons. To compensate for variable air pressure late in matches, As the Bar to climb on was a circle we needed to have our CG be perfectly in line with the center of the Circle. I created a IMU and Wing Balance system that deployed pneumatics based "wings" that flapped at the back of the robot to add a stabilizing moment to balance the robot while climbing climb.</span>
+          </div>
+        </div>
+
+        <h4>Control Theory & Automation</h4>
+        <div class="timeline">
+          <div class="iteration">
+            <b>LIDAR-Based Drift Elimination (Absolute Positioning)</b>
+            <span>Standard dead-wheel odometry accumulates positional error (drift) over time due to carpet friction and defense. To resolve this, I developed a re-localization routine using distance sensors:
+              <ul>
+                <li><strong>Sensor Fusion:</strong> The algorithm fuses data from relative encoders with absolute distance measurements from the field perimeter.</li>
+                <li><strong>Coordinate Reset:</strong> By detecting known field landmarks (walls/corners), the robot "resets" its (x,y,θ) coordinate system mid-match, eliminating accumulated error to ensure the robot is exactly where the code thinks it is.</li>
+              </ul>
+            </span>
+          </div>
+          <div class="iteration">
+            <b>Pure Pursuit for Autonomous Win Point</b>
+            <span>Implemented a Pure Pursuit and Monte Carlo Localization path-following algorithm to navigate the complex "rush" path during the autonomous period. Because of the LIDAR reset, the robot could aggressively traverse the field to descore the match load and touch the elevation bar, consistently securing the Autonomous Win Point (AWP) with sub-inch precision.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-highlight">
+        <h4>Verification & Validation</h4>
+        <p>Validated through regional and signature event performance:</p>
+        <ul>
+          <li><strong>Reliability:</strong> The 77W drivetrain successfully passed "burnout stress tests," running continuous defensive drills for 3 minutes without tripping thermal protection limits.</li>
+          <li><strong>Performance:</strong> Achieved a Combined Skills score of 319, ranking in the top percentiles globally.</li>
+          <li><strong>Awards:</strong> Won Design Award at the Norcal Signature Event and reached the Semi Finals and won the Amaze Award at the world championships.</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="project-dropdown">
+    <summary>
+      <div class="summary-content">
+        <h3>2022 - 2023 Competition Robot (Spin Up Season)</h3>
+        <span class="view-more">View Details ▾</span>
+      </div>
+    </summary>
+    <div class="case-study-card">
+      <div class="top-row">
+        <div class="quadrant">
+          <h4>Game Challenge: Spin Up</h4>
+          <p>The objective was to launch foam discs into a "High Goal" basket from various distances and cover field tiles with an "Expansion" mechanism in the final 10 seconds.</p>
+          <p><strong>Engineering Constraints:</strong></p>
+          <ul>
+            <li><strong>RPM Control:</strong> Hitting a small target from 10+ feet required maintaining constant flywheel velocity despite the energy loss from each projectile launch.</li>
+            <li><strong>Motor Efficiency:</strong> The 8-motor limit forced us to share power between subsystems (Intake/Indexer/Roller) to maximize Drivetrain torque.</li>
+            <li><strong>Expansion:</strong> Required a mechanism to cover maximum surface area (>20 tiles) instantaneously without violating initial size constraints.</li>
+          </ul>
+        </div>
+        <div class="quadrant">
+          <h4>Iterative Development</h4>
+          <p>The robot evolved through two major architectural revisions ("Rev-1" to "Rev-2") based on competition data.</p>
+          <ul>
+            <li><strong>Rev-1 (Curved vs. Straight):</strong> Initial testing proved that a 90° curved shooter allowed for more wheel contact time but was inconsistent. Rev-2 transitioned to a straight-shot linear flywheel for consistent release angles.</li>
+            <li><strong>Rev-2 (Motor Sharing):</strong> To upgrade from a 4-motor to a 6-motor drivetrain for pushing power, I designed a <strong>passive ratchet transmission</strong>. This allowed the intake motor to power the "Indexer" only when spinning in reverse, saving an entire motor for the drive.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="full-width-section">
+        <h4>Mechanical Architecture</h4>
+        <div class="timeline">
+          <div class="iteration">
+            <b>High-Inertia Flywheel System</b>
+            <span>Designed a weighted flywheel launcher (approx. 1.09 lbs) to maximize rotational inertia. By adding steel weights to the 3000 RPM flex wheel assembly, the system minimized RPM drop ("recovery time") between shots. This allowed for a rapid-fire cadence of 3 discs per second, essential for overwhelming opponent defenses.</span>
+          </div>
+          <div class="iteration">
+            <b>Ratchet-Based Power Sharing (The "Passive Transmission")</b>
+            <span>Faced with a motor deficit, I engineered a mechanical multiplexer using plastic custom ratchets and chain drives.
+              <ul>
+                <li><strong>Forward Direction:</strong> Engages the Intake rollers to collect discs.</li>
+                <li><strong>Reverse Direction:</strong> Disengages the intake via ratchet and engages the "Indexer" flaps to feed discs into the flywheel.</li>
+              </ul>
+              This allowed a single motor to control two mutually exclusive subsystems, freeing up motors for a 6-motor high-torque drivetrain.
+            </span>
+          </div>
+          <div class="iteration">
+            <b>Pneumatic Linear Expansion (Endgame)</b>
+            <span>To cover 20+ field tiles in the final seconds, I replaced the initial "Trebuchet" prototype with a compact <strong>Linear Slide Launcher</strong>. Powered by stored pneumatic energy, this system deployed a net of string projectiles instantaneously, securing the "Covered Tile" bonus points reliably without entanglement risk.</span>
+          </div>
+        </div>
+
+        <h4>Control Theory & Automation</h4>
+        <div class="timeline">
+          <div class="iteration">
+            <b>Take-Back-Half (TBH) Velocity Control</b>
+            <span>Standard PID loops struggled with the non-linear physics of a flywheel recovering from a sudden energy loss (projectile launch). We implemented a <strong>Take-Back-Half</strong> algorithm:
+              <ul>
+                <li><strong>Logic:</strong> When the error sign crosses zero (target RPM reached), the output power is reset to the average of the peak output and the current output.</li>
+                <li><strong>Result:</strong> This eliminated the "oscillation" common in standard PIDs, ensuring the flywheel stabilized at the exact target RPM within 200ms of a shot.</li>
+              </ul>
+            </span>
+          </div>
+          <div class="iteration">
+            <b>Automated Disc Management</b>
+            <span>Implemented a state machine that tracked disc count using optical sensors. The robot automatically managed the "Index-to-Shoot" handoff, preventing jams by reversing the intake briefly if current spikes were detected (indicating a stuck disc).</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-highlight">
+        <h4>Verification & Validation</h4>
+        <p>Validated through performance at the NorCal Regional Championship and Signature Events:</p>
+        <ul>
+          <li><strong>Accuracy:</strong> The TBH algorithm maintained flywheel variance to &lt;± 5 RPM, allowing for cross-field shots.</li>
+          <li><strong>Awards:</strong> The team won the <strong>"Amaze Award"</strong> and <strong>Tournament Finalist</strong> at the Regional Championship, double-qualifying for the World Championship.</li>
+          <li><strong>Skills Ranking:</strong> Achieved a combined Driver/Programming Skills score of 246, ranking in the top tier of the region.</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details class="project-dropdown">
+    <summary>
+      <div class="summary-content">
+        <h3>Previous Seasons (2019 - 2022)</h3>
+        <span class="view-more">View Details ▾</span>
+      </div>
+    </summary>
+    <div class="case-study-card">
+      <div class="timeline">
+        <div class="iteration">
+          <b>2021 - 2022 (Tipping Point)</b>
+          <span>Engineered a single motor 4 bar lift that had a high torque and could lift 2 lb mobile goals and score fast. This robot helped us get a high ranking at the state championships and make the world championships.</span>
+        </div>
+        <div class="iteration">
+          <b>2020 - 2021 (Change Up)</b>
+          <span>Designed a fast ball cycling intake and flywheel to pickup, store and score spherical game objects into vertical goals. Learned how to use CAD during pandemic restrictions.</span>
+        </div>
+        <div class="iteration">
+          <b>2019 - 2020 (Tower Takeover)</b>
+          <span>During our rookie season we tried out many different mechanism including 2 bar lifts, 4 bar lifts, Holonomic drive, Mecanum drive, and Tank drive. We created a stacking mechanism capable of manipulating 10-cube stacks and created a mechanism to prevent tipping at max extension. Season Cut short due to Covid.</span>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="project-dropdown">
+    <summary>
+      <div class="summary-content">
+        <h3>Vex Robotics Gallery</h3>
+        <span class="view-more">View Details ▾</span>
+      </div>
+    </summary>
+    <div class="case-study-card">
+      <div class="gallery-grid">
+        <figure>
+          <img src="images/High_Climb.jpg" alt="High Stakes World">
+          <figcaption><strong>2024-2025</strong> High Stakes World Championships Robot</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Screenshot 2026-02-05 193218.png" alt="State CAD">
+          <figcaption><strong>2024-2025:</strong> State Championships Robot CAD</figcaption>
+        </figure>
+        <figure>
+          <img src="images/vex_thumb2.png" alt="High Stakes Regional">
+          <figcaption><strong>2024-2025</strong> High Stakes Regional Championships Robot</figcaption>
+        </figure>
+        <figure>
+          <img src="images/vex_thumb.png" alt="Over Under World">
+          <figcaption><strong>2023-2024:</strong> Over Under World Championships Robot</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Screenshot 2026-02-05 183240.png" alt="Over Under Regional">
+          <figcaption><strong>2023-2024</strong> Over Under Regional Championships Robot</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Screenshot 2026-02-05 195314.png" alt="Spin Up World">
+          <figcaption><strong>2022-2023:</strong> Spin Up World Championships Robot</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Screenshot 2026-02-05 195221.png" alt="Spin Up State">
+          <figcaption><strong>2022-2023</strong> Spin Up State Championships Robot</figcaption>
+        </figure>
+        <figure>
+          <img src="images/Screenshot 2026-02-05 195939.png" alt="Tipping Point">
+          <figcaption><strong>2021-2022:</strong> Tipping Point Regional Championships Robot</figcaption>
+        </figure>
+      </div>
+    </div>
+  </details>
+
+  <h2 class="category-title">Personal Projects</h2>
+
+  <details class="project-dropdown">
+    <summary>
+      <div class="summary-content">
+        <h3>Variable Pitch Propeller (Work in Progress)</h3>
+        <span class="view-more">View Details ▾</span>
+      </div>
+    </summary>
+    <div class="case-study-card">
+      <div class="top-row">
+        <div class="quadrant">
+          <h4>Objective</h4>
+          <p>To develop a "Constant Speed Propeller" mechanism for RC aircraft capable of adjusting blade pitch from -90° to 90°.</p>
+          <p><strong>Design Constraints:</strong></p>
+          <ul>
+            <li><strong>CAD Workflow:</strong> All mechanical modeling must be executed in <strong>Siemens NX</strong> to utilize advanced surfacing capabilities.</li>
+            <li><strong>Form Factor:</strong> The assembly must fit within a standard RC aircraft cowling to remain practical for flight.</li>
+          </ul>
+        </div>
+        <div class="quadrant">
+          <h4>The Engineering Challenge</h4>
+          <p>The primary design constraint is the <strong>transfer of actuation force</strong> from a stationary servo to a high-RPM rotating propeller hub.</p>
+          <p>The mechanism must decouple the linear actuation axis from the rotational axis without introducing excessive vibration or friction, all while fitting within a standard aircraft cowling.</p>
+        </div>
+      </div>
+
+      <div class="full-width-section">
+        <h4>Feasibility Analysis & Ideation</h4>
+        <div class="timeline">
+          <div class="iteration">
+            <b>Constraint Analysis (Rejected Concepts)</b>
+            <span>I evaluated a hollow-shaft design (helicopter style) but rejected it because standard brushless motor shafts lack the diameter for internal linkages. I also ruled out a "Double Ratchet" mechanism because it prevents active braking, which reduces maneuverability.</span>
+          </div>
+          <div class="iteration">
+            <b>Alternative Concept: Compliant Actuation</b>
+            <span>Investigated a compliant mechanism approach where the propeller is cast from flexible material with an embedded tension wire. Pulling the internal wire would torsionally twist the blade to change the angle of attack, eliminating the need for complex bearings.</span>
+          </div>
+          <div class="iteration">
+            <b>Selected Architecture (External Swashplate)</b>
+            <span>I am currently moving forward with an external linkage system inspired by swerve-drive modules. This utilizes a non-rotating "Swashplate" ring driven by a servo to transmit linear motion to the rotating blade grips via a bearing interface.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-highlight">
+        <h4>Current Status</h4>
+        <p><strong>Phase:</strong> Component Sourcing & CAD Ideation.</p>
+        <p>I have procured the ESC, motor, and control electronics. I am currently ideating the CAM setup in Siemens NX to solve the interference issues between the stationary swashplate and the rotating shaft.</p>
+      </div>
+    </div>
+  </details>
+
+</section>
+
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Expanded photo">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  // Function to open lightbox
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightbox.classList.add('active'); // Uses CSS opacity transition
+  }
+
+  // Function to close lightbox
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    setTimeout(() => {
+      lightboxImg.src = ''; // Clear source after fade out to save memory
+    }, 200);
+  }
+
+  // Add click listeners to figures
+  document.querySelectorAll('.gallery-grid figure').forEach(figure => {
+    figure.addEventListener('click', (e) => {
+      const img = figure.querySelector('img');
+      if (img) {
+        openLightbox(img.src, img.alt);
+      }
+    });
+  });
+
+  // Close listeners
+  lightboxClose.addEventListener('click', closeLightbox);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</body> </html>
+</body>
+</html>
