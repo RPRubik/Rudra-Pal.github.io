@@ -11,13 +11,13 @@
       display: flex; 
       align-items: center; 
       justify-content: center; 
-      gap: 2rem; 
+      gap: 3rem; 
       padding: 4rem 2rem; 
       max-width: 1000px; 
-      margin: 2rem auto; 
+      margin: 3rem auto; 
       background: white; 
-      border-radius: 10px; 
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08); 
+      border-radius: 12px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
     }
     
     .about img { 
@@ -25,8 +25,8 @@
       height: 250px; 
       border-radius: 50%; 
       object-fit: cover; 
-      /* Using the light green border you requested */
       border: 4px solid #e8fcc5; 
+      flex-shrink: 0;
     }
     
     .about-text { 
@@ -36,12 +36,38 @@
     .about-text h2 { 
       margin-top: 0; 
       color: #203a43; 
+      font-size: 2rem;
     }
     
     .about-text p { 
       color: #444; 
       line-height: 1.6; 
-      font-size: 1.05rem;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Combined Connect Styles */
+    .connect-info {
+      border-top: 1px solid #eee;
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .connect-info p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .connect-info a {
+      color: #203a43;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .connect-info a:hover {
+      text-decoration: underline;
+      color: #2c5364;
     }
     
     /* Mobile layout */
@@ -49,10 +75,12 @@
       .about { 
         flex-direction: column; 
         text-align: center; 
+        margin: 1rem;
+        padding: 2rem;
       } 
       .about img { 
-        width: 200px; 
-        height: 200px; 
+        width: 180px; 
+        height: 180px; 
       } 
     }
   </style>
@@ -67,18 +95,23 @@
         <a href="engr-projects.html">Projects</a>
         <a href="education.html">Education</a>
         <a href="volunteering.html">Volunteering</a>
-        <a href="connect.html">Connect</a>
       </div>
     </nav>
   </header>
 
   <section class="about">
     <img src="images/Rudra.jpg" alt="Rudra Pal Profile Picture">
+    
     <div class="about-text">
       <h2>About Me</h2>
       <p>
         Hi! I’m Rudra Pal, a mechanical and aerospace engineering student with a passion for robotics, innovation, and building systems that bring ideas to life.
-        
+      </p>
+
+      <div class="connect-info">
+        <p><strong>Email:</strong> <a href="mailto:rudrashantanupal@gmail.com">rudrashantanupal@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rudra-pal" target="_blank">linkedin.com/in/rudra-pal</a></p>
+      </div>
     </div>
   </section>
 
