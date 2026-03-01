@@ -232,7 +232,7 @@ header h1 a {
 .timeline {
   position: relative;
   padding-left: 25px;
-  border-left: 2px solid #e8fcc5; /* Vertical line color */
+  border-left: 2px solid #8f918a; /* Vertical line color */
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
@@ -253,7 +253,7 @@ header h1 a {
   left: -32px; /* Adjust to sit on the line */
   top: 6px;
   width: 12px;
-  height: 12px;
+  height: 12px; 
   background: #203a43;
   border-radius: 50%;
   border: 2px solid #fff;
@@ -271,11 +271,11 @@ header h1 a {
    6. RESULTS HIGHLIGHT BOX
    ========================================= */
 .results-highlight {
-  background: #ffffff; /* Subtle blue-grey tint */
+  background: #fbfde3da; /* Subtle blue-grey tint */
   padding: 2rem;
   border-radius: 8px;
   margin-top: 2rem;
-  border: 1px solid #e1e8ed;
+  border: 2px solid #000000;
 }
 
 /* OVERRIDE: Black border for "Verification & Validation" header */
@@ -495,4 +495,12 @@ figcaption {
     height: 80px;
     margin-bottom: 0.5rem;
   }
+}
+.subcategory-title {
+  font-size: 1.3rem;
+  color: #2c5364;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.3rem;
 }
