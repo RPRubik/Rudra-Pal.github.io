@@ -280,7 +280,7 @@ header h1 a {
 
 /* OVERRIDE: Black border for "Verification & Validation" header */
 .results-highlight h4 {
-  border-left: 5px solid #203a43; /* Site Dark Color */
+  border-left: 5px solid #203a43 !important; /* Fixed specificity */
   color: #203a43;
 }
 
@@ -328,10 +328,10 @@ figure img {
 }
 
 figcaption {
-  padding: 0.8rem 1rem;
+  padding: 1rem; 
   text-align: center;
-  font-size: 0.85rem;
-  color: #666;
+  font-size: 0.9rem;
+  color: #444;
   background: white;
   line-height: 1.4;
   flex-grow: 1; /* Pushes text to fill space if needed */
@@ -347,7 +347,7 @@ figcaption strong {
 }
 
 /* =========================================
-   FIX 1: INSTANT LIGHTBOX (ZERO DELAY)
+   8. INSTANT LIGHTBOX (ZERO DELAY)
    ========================================= */
 #lightbox {
   position: fixed;
@@ -391,32 +391,6 @@ figcaption strong {
 
 #lightbox.active img {
   transform: scale(1);
-}
-
-/* =========================================
-   FIX 2: FORCE BLACK BORDER ON VALIDATION
-   ========================================= */
-/* Use !important to guarantee it overrides the default green */
-.results-highlight h4 {
-  border-left: 5px solid #203a43 !important; 
-  color: #203a43;
-}
-
-/* =========================================
-   FIX 3: ADJUST CAPTION SIZING
-   ========================================= */
-/* Ensure text has breathing room */
-figcaption {
-  padding: 1rem; 
-  text-align: center;
-  font-size: 0.9rem;
-  color: #444;
-  background: white;
-  line-height: 1.4;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 /* =========================================
@@ -505,19 +479,41 @@ figcaption {
   padding-bottom: 0.3rem;
 }
 
-/* You can move these styles to your main CSS file */
+/* =========================================
+   11. ABOUT SECTION & PROFILE IMAGE
+   ========================================= */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid #eee;
+}
+
 .profile-img-wrapper {
-  width: 300px; /* Adjust this to match your current image size */
-  height: 300px; 
-  border-radius: 50%; /* Keeps the image circular */
-  overflow: hidden; /* Ensures zoomed parts of the image don't spill out */
-  flex-shrink: 0; /* Prevents the container from squishing if you are using flexbox */
+  width: 250px; /* Reduced from 300px for better proportions */
+  height: 250px; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  flex-shrink: 0; 
+  border: 4px solid #e8fcc5; /* Added a subtle brand accent ring */
 }
 
 .profile-img-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Prevents the image from stretching/distorting */
-  object-position: center -24%; /* Adjust the 20% up or down to center your face perfectly */
-  transform: scale(1.2); /* Zooms in by 30%. Increase or decrease this number to adjust zoom */
+  object-fit: cover; 
+  object-position: center top; /* Center-top keeps the face in frame natively */
+}
+
+/* Mobile Responsiveness for About Section */
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
 }
